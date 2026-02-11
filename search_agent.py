@@ -32,8 +32,7 @@ def init_agent(index, repo_owner, repo_name):
         name="gh_agent",
         instructions=system_prompt,
         tools=[search_tool.search],
-        model='gpt-4o-mini',
-        api_key=os.environ["OPENAI_API_KEY"]
+        model='gpt-4o-mini'
     )
 
     return agent
