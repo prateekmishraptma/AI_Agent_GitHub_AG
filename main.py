@@ -3,7 +3,9 @@ import search_agent
 import logs
 
 import asyncio
+import os
 
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 REPO_OWNER = "DataTalksClub"
 REPO_NAME = "faq"
