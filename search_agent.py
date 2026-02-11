@@ -1,6 +1,11 @@
 import search_tools
 from pydantic_ai import Agent
 import os
+import streamlit as st
+
+# Set OPENAI_API_KEY in environment for downstream libraries
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+
 
 SYSTEM_PROMPT_TEMPLATE = """
 You are a helpful assistant that answers questions about documentation.  
@@ -27,7 +32,8 @@ def init_agent(index, repo_owner, repo_name):
         name="gh_agent",
         instructions=system_prompt,
         tools=[search_tool.search],
-        model='gpt-4o-mini'
+        model='gpt-4o-mini',
+        api_key=os.environ["OPENAI_API_KEY"]
     )
 
     return agent
