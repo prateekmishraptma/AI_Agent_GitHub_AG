@@ -5,7 +5,8 @@ import streamlit as st
 import asyncio
 import os
 
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+# Set Gemini API key
+os.environ["GOOGLE_API_KEY"] = st.secrets["GEMINI_API_KEY"]
 
 REPO_OWNER = "DataTalksClub"
 REPO_NAME = "faq"
