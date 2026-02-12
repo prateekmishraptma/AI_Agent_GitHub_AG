@@ -7,8 +7,8 @@ import logs
 import os
 import streamlit as st
 
-# Set OPENAI_API_KEY in environment for downstream libraries
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+# Set Gemini API key
+os.environ["GOOGLE_API_KEY"] = st.secrets["GEMINI_API_KEY"]
 
 # --- Initialization ---
 @st.cache_resource
