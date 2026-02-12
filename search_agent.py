@@ -32,7 +32,7 @@ def init_agent(index, repo_owner, repo_name):
         name="gh_agent",
         instructions=system_prompt,
         tools=[search_tool.search],
-        model='gemini-1.5-pro'
+        model='google-gla:gemini-1.5-pro'
     )
 
     return agent
