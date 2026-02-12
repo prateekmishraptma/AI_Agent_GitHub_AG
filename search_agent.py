@@ -3,8 +3,8 @@ from pydantic_ai import Agent
 import os
 import streamlit as st
 
-# Set OPENAI_API_KEY in environment for downstream libraries
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+# Set Gemini API key
+os.environ["GOOGLE_API_KEY"] = st.secrets["GEMINI_API_KEY"]
 
 
 SYSTEM_PROMPT_TEMPLATE = """
@@ -32,7 +32,7 @@ def init_agent(index, repo_owner, repo_name):
         name="gh_agent",
         instructions=system_prompt,
         tools=[search_tool.search],
-        model='gpt-4o-mini'
+        model='gemini-1.5-flash'
     )
 
     return agent
